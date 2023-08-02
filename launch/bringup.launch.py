@@ -3,9 +3,9 @@
 import launch
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import ThisLaunchFileDir, LaunchConfiguration
+from launch.substitutions import ThisLaunchFileDir, LaunchConfiguration, Command, TextSubstitution
 from launch_ros.actions import Node
 import os
 from pathlib import Path
@@ -13,15 +13,31 @@ from launch.launch_context import LaunchContext
 from launch.conditions import IfCondition
 from launch_ros.actions import ComposableNodeContainer
 from launch_ros.descriptions import ComposableNode
+from launch_ros.parameters_type import ParameterValue
+import subprocess
 
 def generate_launch_description():
     neo_mpo_700 = get_package_share_directory('neo_mpo_700-2')
     robot_namespace = LaunchConfiguration('robot_namespace', default='')
     imu_enable = LaunchConfiguration('imu_enable', default='False')
+    use_sim_time = DeclareLaunchArgument('use_sim_time', default_value='False')
     context = LaunchContext()
 
-    urdf = os.path.join(get_package_share_directory('neo_mpo_700-2'), 'robot_model/mpo_700', 'mpo_700.urdf')
+    # Combo base xacro
+    xacro = os.path.join(get_package_share_directory('amr_combo_v2'), 'urdf', 'amr_combo_v2.xacro')
+    
+    # Complete combo model xacro
+    # xacro = os.path.join(get_package_share_directory('awcombo_description'), 'urdf', 'awcombo.xacro')
+    urdf = os.path.splitext(xacro)[0] + '.urdf'
 
+    # Creating Parameter and converting it as os.Path
+    robot_model = LaunchConfiguration('robot_model', default=xacro)
+    str_robot_model = context.perform_substitution(robot_model)
+
+    # Xacro to URDF conversion 
+    subprocess.call(['xacro', str_robot_model, '-o', urdf])
+    
+    # URDF reading
     with open(urdf, 'r') as infp:  
         robot_desc = infp.read()
 
@@ -34,7 +50,8 @@ def generate_launch_description():
         output='screen',
         namespace=robot_namespace,
         parameters=[{'robot_description': robot_desc, 'frame_prefix': robot_namespace}],
-		arguments=[urdf])
+		arguments=[urdf]
+    )
 
     # Note: imu_link needs to be manually uncommented in the URDF
     start_imu_driver = ComposableNodeContainer(
@@ -108,4 +125,6 @@ def generate_launch_description():
         kinematics,
         teleop,
         relay_topic_lidar1,
-        relay_topic_lidar2])
+        relay_topic_lidar2,
+        use_sim_time,
+        ])
