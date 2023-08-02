@@ -1,3 +1,6 @@
+# Warning:
+This package has been cloned from the original neo_mpo_700-2 (of Neobotix), and it has been changed and adjusted on the personal AwCombo of Automationware.
+
 # ROS configuration and launch files for Neobotix MPO-700
 
 This package contains configuration and launch files for Neobotix MPO-700.
