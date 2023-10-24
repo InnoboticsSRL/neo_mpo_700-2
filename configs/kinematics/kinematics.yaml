@@ -36,7 +36,7 @@
       enc_ticks_per_rev: 10000
       home_angle: 180.0
       home_dig_in: 9
-      enc_home_offset: 4509
+      enc_home_offset: 5433 #4509
 
     drive1:
       can_id: 4
@@ -54,7 +54,7 @@
       enc_ticks_per_rev: 10000
       home_angle: 180.0
       home_dig_in: 9
-      enc_home_offset: -4278
+      enc_home_offset: -6296 #-4278
 
     drive2:
       can_id: 6
@@ -72,7 +72,7 @@
       enc_ticks_per_rev: 10000
       home_angle: 0.0
       home_dig_in: 9
-      enc_home_offset: 4705
+      enc_home_offset: 5641 #4705
 
     drive3:
       can_id: 8
@@ -90,4 +90,4 @@
       enc_ticks_per_rev: 10000
       home_angle: 0.0
       home_dig_in: 9
-      enc_home_offset: -4240
+      enc_home_offset: -6186 #-4240
