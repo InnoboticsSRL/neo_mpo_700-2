@@ -232,7 +232,7 @@ controller_server:
       max_backup_dist : 0.0
       min_stop_dist : 0.2
       differential_drive : false
-      allow_reversing: false
+      allow_reversing: true
 
 local_costmap:
   local_costmap:
