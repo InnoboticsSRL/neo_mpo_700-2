@@ -3,7 +3,7 @@
     num_wheels: 4
     control_rate: 100.0
     wheel_radius: 0.090
-    wheel_lever_arm: 0.030 #0.0453 #0.045 # distance from the steering axis to the center of the wheels [m]
+    wheel_lever_arm: 0.0453 #0.045 # distance from the steering axis to the center of the wheels [m]
     zero_vel_threshold: 0.001
     small_vel_threshold: 0.02
     steer_hysteresis: 30.0
@@ -42,7 +42,7 @@
     drive1:
       can_id: 4
       joint_name: mpo_700_wheel_front_left_joint
-      rot_sign: -1
+      rot_sign: 1
       gear_ratio: 30
       enc_ticks_per_rev: 10000
     steer1:
@@ -53,7 +53,7 @@
       rot_sign: -1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 270.0
+      home_angle: 90.0
       home_dig_in: 9
       enc_home_offset: -5116 #-5429
 
@@ -68,10 +68,10 @@
       joint_name: mpo_700_caster_back_left_joint
       center_pos_x: -0.260 #-0.240
       center_pos_y: 0.260 #-0.190
-      rot_sign: -1
+      rot_sign: 1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 90.0
+      home_angle: -90.0
       home_dig_in: 9
       enc_home_offset: 5284 #4845
 
