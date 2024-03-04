@@ -102,7 +102,7 @@ amcl:
     save_pose_rate: 0.5
     sigma_hit: 0.2
     tf_broadcast: true
-    transform_tolerance: 0.1
+    transform_tolerance: 0.05
     scan_topic: /lidar_1/scan_filtered
     update_min_a: 0.1
     update_min_d: 0.1
@@ -196,7 +196,7 @@ controller_server:
     general_goal_checker:
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.05
-      yaw_goal_tolerance: 0.05
+      yaw_goal_tolerance: 0.02
       stateful: True
     FollowPath:
       plugin: "neo_local_planner::NeoLocalPlanner"
@@ -211,7 +211,7 @@ controller_server:
       min_rot_vel : 0.1
       max_trans_vel : 0.8
       min_trans_vel : 0.1
-      yaw_goal_tolerance : 0.005
+      yaw_goal_tolerance : 0.002
       xy_goal_tolerance : 0.01
       goal_tune_time : 0.5
       lookahead_time : 0.4
@@ -356,7 +356,7 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "nav2_navfn_planner/NavfnPlanner"
-      tolerance: 0.5
+      tolerance: 0.25
       use_astar: false
       allow_unknown: true
 
@@ -392,7 +392,7 @@ waypoint_follower:
     waypoint_task_executor_plugin: "wait_at_waypoint"   
     wait_at_waypoint:
       plugin: "nav2_waypoint_follower::WaitAtWaypoint"
-      enabled: True
+      enabled: False
       waypoint_pause_duration: 200
 
 
