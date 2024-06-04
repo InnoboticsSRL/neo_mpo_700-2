@@ -1,0 +1,7 @@
+image: sps24.pgm
+resolution: 0.050000
+# origin: [-7.17898, -18.6041, 0.00]
+origin: [-15.0, -10.0 , 0.00]
+negate: 0
+occupied_thresh: 0.5
+free_thresh: 0.1

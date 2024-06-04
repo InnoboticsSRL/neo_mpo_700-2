@@ -242,7 +242,7 @@ local_costmap:
       global_frame: odom
       robot_base_frame: base_link
       footprint_padding: 0.
-      footprint:  "[ [0.435,0.435],[-0.435,0.435],[-0.435,-0.435],[0.435,-0.435] ]"
+      footprint:  "[ [0.445,0.445],[-0.445,0.445],[-0.445,-0.445],[0.445,-0.445] ]"
       use_sim_time: False
       rolling_window: true
       width: 5
@@ -289,7 +289,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link
       footprint_padding: 0.
-      footprint:  "[ [0.435,0.435],[-0.435,0.435],[-0.435,-0.435],[0.435,-0.435] ]"
+      footprint:  "[ [0.445,0.445],[-0.445,0.445],[-0.445,-0.445],[0.445,-0.445] ]"
       use_sim_time: False
       # robot_radius: 0.22
       resolution: 0.05
