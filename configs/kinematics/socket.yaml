@@ -20,64 +20,64 @@
 
     drive0:
       can_id: 2
-      joint_name: mpo_700_wheel_front_left_joint
+      joint_name: mpo_700_wheel_front_right_joint
       rot_sign: -1
       gear_ratio: 30
       enc_ticks_per_rev: 10000
     steer0:
       can_id: 1
-      joint_name: mpo_700_caster_front_left_joint
+      joint_name: mpo_700_caster_front_right_joint
       rot_sign: 1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 180.0
+      home_angle: 90.0
       home_dig_in: 9
-      enc_home_offset: 4663
+      enc_home_offset: 4847
 
     drive1:
       can_id: 4
-      joint_name: mpo_700_wheel_back_left_joint
+      joint_name: mpo_700_wheel_front_left_joint
       rot_sign: 1
       gear_ratio: 30
       enc_ticks_per_rev: 10000
     steer1:
       can_id: 3
-      joint_name: mpo_700_caster_back_left_joint
+      joint_name: mpo_700_caster_front_left_joint
       rot_sign: -1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 180.0
+      home_angle: 90.0
       home_dig_in: 9
-      enc_home_offset: -5429
+      enc_home_offset: -5116
 
     drive2:
       can_id: 6
-      joint_name: mpo_700_wheel_back_right_joint
+      joint_name: mpo_700_wheel_back_left_joint
       rot_sign: -1
       gear_ratio: 30
       enc_ticks_per_rev: 10000
     steer2:
       can_id: 5
-      joint_name: mpo_700_caster_back_right_joint
+      joint_name: mpo_700_caster_back_left_joint
       rot_sign: 1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 0.0
+      home_angle: -90.0
       home_dig_in: 9
-      enc_home_offset: 4845
+      enc_home_offset: 5284
 
     drive3:
       can_id: 8
-      joint_name: mpo_700_wheel_front_right_joint
+      joint_name: mpo_700_wheel_back_right_joint
       rot_sign: 1
       gear_ratio: 30
       enc_ticks_per_rev: 10000
     steer3:
       can_id: 7
-      joint_name: mpo_700_caster_front_right_joint
+      joint_name: mpo_700_caster_back_right_joint
       rot_sign: -1
       gear_ratio: 19
       enc_ticks_per_rev: 10000
-      home_angle: 0.0
+      home_angle: 270.0
       home_dig_in: 9
-      enc_home_offset: -5363
+      enc_home_offset: -5679

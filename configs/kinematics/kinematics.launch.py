@@ -18,7 +18,11 @@ def generate_launch_description():
             output='screen',
             namespace = robot_namespace,
             name='neo_omnidrive_node', 
-            parameters = [config]), 
+            parameters = [config],
+            remappings=[
+                ('/joint_states', '/neo/joint_states') 
+            ]            
+        ), 
 
         launch_ros.actions.Node(
             package='neo_kinematics_omnidrive2',
@@ -26,5 +30,10 @@ def generate_launch_description():
             output='screen',
             namespace = robot_namespace,
             name='neo_omnidrive_socketcan_node',
-            parameters = [config1])
+            parameters = [config1],
+            remappings=[
+                ('/joint_states_raw', '/neo/joint_states_raw'),
+                ('/joint_states', '/neo/joint_states') 
+            ]             
+        )
     ])
