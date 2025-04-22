@@ -12,7 +12,7 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch configs robot_model
+install(DIRECTORY launch configs
     
   DESTINATION share/${PROJECT_NAME})
 

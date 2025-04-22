@@ -19,9 +19,9 @@
       home_angle: 90.0
 
     drive1:
-      joint_name: mpo_700_wheel_back_left_joint
+      joint_name: mpo_700_wheel_front_left_joint
     steer1:
-      joint_name: mpo_700_caster_back_left_joint
+      joint_name: mpo_700_caster_front_left_joint
       center_pos_x: 0.260
       center_pos_y: 0.260
       home_angle: 90.0
@@ -38,6 +38,6 @@
       joint_name: mpo_700_wheel_back_right_joint
     steer3:
       joint_name: mpo_700_caster_back_right_joint
-      center_pos_x: 0.240
-      center_pos_y: -0.190
+      center_pos_x: -0.260
+      center_pos_y: -0.260
       home_angle: 270.0
