@@ -19,17 +19,10 @@ def generate_launch_description():
             parameters = [config])
     ,
      launch_ros.actions.Node(
-            package='joy', 
-            executable='joy_node', 
+            package='joy_linux', 
+            executable='joy_linux_node', 
             output='screen',
             name='joy_node',
             namespace=robot_namespace,
             parameters = [{'dev': "/dev/input/js0"}, {'deadzone':0.12}]),
-    # launch_ros.actions.Node(
-    #         package='joy_linux', 
-    #         executable='joy_linux_node', 
-    #         output='screen',
-    #         name='joy_node',
-    #         namespace=robot_namespace,
-    #         parameters = [{'dev': "/dev/input/js0"}, {'deadzone':0.12}])
     ])
